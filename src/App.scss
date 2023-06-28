@@ -1,0 +1,26 @@
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+}
+.button {
+    border-radius: 15px;
+    background-color: #ff5e00;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #c305fa;
+    padding: 5px;
+    color: white;
+    transition-duration: 1s;
+    font-weight: 700;
+    text-align: center;
+    &:hover {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+
+
+  
+  
+  

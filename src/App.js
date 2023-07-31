@@ -17,9 +17,9 @@ function App() {
         <div className="App">
             <Routes >
                 <Route path='/' element={<Main path='/quiz/1' />} />
-                <Route path='/quiz/1' element={<Quiz path='/quiz/2' />} />
-                <Route path='/quiz/2' element={<Quiz path='/quiz/3' />} />
-                <Route path='/quiz/3' element={<Quiz path='/feedback' />} />
+                <Route path='/quiz/1' element={<Quiz currentPath='/quiz/1' nextPath='/quiz/2' />} />
+                <Route path='/quiz/2' element={<Quiz currentPath='/quiz/2' nextPath='/quiz/3' />} />
+                <Route path='/quiz/3' element={<Quiz currentPath='/quiz/3' nextPath='/feedback' />} />
                 <Route path='/feedback' element={<Feedback path='/result' />} />
                 <Route path='/result' element={<Result/>}/>
             </Routes>

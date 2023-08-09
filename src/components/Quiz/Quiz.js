@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Accordion from 'react-bootstrap/Accordion';
 import './Quiz.scss';
 
@@ -51,18 +50,20 @@ function Quiz({ nextPath, currentPath }) {
 
     const arrayAnswers = test.answers.map((item, index) => {
         return (
-            <Form.Check
-                label={item}
-                name="group1"
-                type='radio'
-                id={index}
-            />
-            // <div className='quiz__answer'>
-            //     <div className='quiz__answer-name'>
-            //         {item}
-            //     </div>
-            //     <input type="radio" key={index} id={index} value={index} />
-            // </div>
+            <div className='quiz__answer'>
+                <Form.Group className="mb-3" controlId={index}>
+                    <Form.Check
+                        label={item}
+                        name="group1"
+                        type='radio'
+                        id={index}
+                        // onClick={}
+                    />
+                </Form.Group>
+
+            </div>
+
+
         )
     })
     return (
@@ -87,14 +88,14 @@ function Quiz({ nextPath, currentPath }) {
                     </div>
 
                 </div> */}
-                <Form>
+                <Form className='quiz__form'>
                     {arrayAnswers}
                 </Form>
                 <Loader />
                 <Link to={nextPath}>Далее</Link>
             </div >
-            </div>
-            );
+        </div>
+    );
 
 }
 

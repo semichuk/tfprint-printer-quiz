@@ -34,20 +34,17 @@
 
     }
 
-    // &__help-burger {
-    //     position: relative;
-    //     padding-left: 10px;
-    //     padding-right: 10px;
-
-    // }
-
-    &__help_opened {
-        transform: rotate(180deg);
+    &__form {
+        display: grid;
+        row-gap: 10px;
     }
 
-    // &__help_closed {
-    //     overflow: hidden;
-    //     text-overflow: ellipsis;
-    //     max-height: 22px;
-    // }
+    &__answer {
+        display: grid;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #f5f5f5;
+    }
+
+    
 }

@@ -1,13 +1,13 @@
-import logo from '.logo.svg';
-import '.App.scss';
+import logo from './logo.svg';
+import './App.scss';
 
 import { useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
-import Main from '.componentsMainMain.js';
-import Quiz from '.componentsQuizQuiz.js';
-import Feedback from '.componentsFeedbackFeedback.js';
-import Result from '.componentsResultResult.js'
+import Main from './components/Main/Main.js';
+import Quiz from './components/Quiz/Quiz.js';
+import Feedback from './components/Feedback/Feedback.js';
+import Result from './components/Result/Result.js'
 
 function App() {
     const [location, setLocation] = useState(useLocation());

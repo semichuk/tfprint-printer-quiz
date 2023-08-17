@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import './Quiz.scss';
 
-function Quiz({ nextPath, currentPath }) {
+function Quiz({ answerNumber, onClickAnswer, previousPath, nextPath, currentPath }) {
     const [tests, setTests] = useState({
         one: {
             currentPath: "/quiz/1",
@@ -24,7 +24,7 @@ function Quiz({ nextPath, currentPath }) {
         three: {
             currentPath: "/quiz/3",
             question: "Сколько этикеток в смену вы будете печатать?",
-            answers: ["До 3тыс в смену", "От 3 до 15 тыс в смену", "От 15 до 30 тыс в смену"],
+            answers: ["До 3 тыс. в смену", "От 3 до 15 тыс. в смену", "От 15 до 30 тыс. в смену"],
             hint: "принтеры этикеток делятся на несколько классов, в зависимости от производительности"
         }
     });
@@ -49,18 +49,25 @@ function Quiz({ nextPath, currentPath }) {
     }
 
     const arrayAnswers = test.answers.map((item, index) => {
+        let color = '';
+        if(answerNumber === index){
+            color = ' quiz__checkbox_checked';
+        }
+        
+        console.log(index);
         return (
-            <div className='quiz__answer'>
-                <Form.Group className="mb-3" controlId={index}>
+            <div className='quiz__answer' onClick={(event , x = currentPath , y = index) => { onClickAnswer(event , x, y); }} id={index} key={index} >
+                {/* <Form.Group className="mb-3" controlId={index}>
                     <Form.Check
                         label={item}
                         name="group1"
                         type='radio'
-                        id={index}
-                        // onClick={}
+                        checked={isChecked}
                     />
-                </Form.Group>
-
+                </Form.Group> */}
+                <div className={'quiz__checkbox' + color}></div>
+                <div></div>
+                <div className='quiz__checkbox-name'>{item}</div>
             </div>
 
 
@@ -74,7 +81,7 @@ function Quiz({ nextPath, currentPath }) {
                 <h2 className='quiz__question'>{test.question}</h2>
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header>Подсказка:</Accordion.Header>
+                        <Accordion.Header>Подсказка</Accordion.Header>
                         <Accordion.Body>
                             {test.hint}
                         </Accordion.Body>
@@ -92,11 +99,14 @@ function Quiz({ nextPath, currentPath }) {
                     {arrayAnswers}
                 </Form>
                 <Loader />
-                <Link to={nextPath}>Далее</Link>
+                <div className='quiz__footer'>
+                    <Link to={nextPath} className='main__button button' style={{  textDecoration: "none"}} >Далее</Link>
+
+                </div>
             </div >
         </div>
     );
 
 }
 
-            export default Quiz;
+export default Quiz;

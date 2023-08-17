@@ -44,7 +44,30 @@
         border-radius: 10px;
         padding: 5px;
         background-color: #f5f5f5;
+        grid-template-columns: auto 1fr 10fr;
+        padding: 10px;
     }
 
-    
+    &__footer {
+        display: grid;
+        justify-items: center;
+        padding: 40px;
+    }
+
+    &__checkbox-name {
+
+    }
+
+    &__checkbox {
+        border-radius: 50%;
+        border: 3px solid #6c00b4;
+
+        width: 30px;
+        height: 30px;
+
+    }
+
+    &__checkbox_checked {
+        background-color: #6c00b4;
+    }
 }

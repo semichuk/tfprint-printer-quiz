@@ -11,15 +11,29 @@ import Result from './components/Result/Result.js'
 
 function App() {
     const [location, setLocation] = useState(useLocation());
-    const [answer, setAnswer] = useState({
-        "one": 0,
-        "two": 0,
-        "three": 0
-    });
+    
+    const [answer1, setAnswer1] = useState(0);    
+    const [answer2, setAnswer2] = useState(0);    
+    const [answer3, setAnswer3] = useState(0);
 
-    const onClickAnswer = (path) => {
 
-    }
+    
+    const onClickAnswer = (event,  currentPath, index) => {
+        switch (currentPath) {
+            case '/quiz/1':
+                setAnswer1(index);
+                break;
+            case '/quiz/2':
+                setAnswer2(index);
+                break;
+            case '/quiz/3':
+                setAnswer3(index);
+                break;
+            default:
+                console.log(currentPath)
+                break;
+        }
+    };
     
 
 
@@ -27,11 +41,11 @@ function App() {
         <div className="App">
             <Routes >
                 <Route path='/' element={<Main path='/quiz/1' />} />
-                <Route path='/quiz/1' element={<Quiz currentPath='/quiz/1' nextPath='/quiz/2' />} />
-                <Route path='/quiz/2' element={<Quiz currentPath='/quiz/2' nextPath='/quiz/3' />} />
-                <Route path='/quiz/3' element={<Quiz currentPath='/quiz/3' nextPath='/feedback' />} />
-                <Route path='/feedback' element={<Feedback path='/result' />} />
-                <Route path='/result' element={<Result/>}/>
+                <Route path='/quiz/1' element={<Quiz answerNumber={answer1} onClickAnswer={onClickAnswer} previousPath='/' currentPath='/quiz/1' nextPath='/quiz/2' />} />
+                <Route path='/quiz/2' element={<Quiz answerNumber={answer2} onClickAnswer={onClickAnswer}  previousPath='/quiz/1' currentPath='/quiz/2' nextPath='/quiz/3' />} />
+                <Route path='/quiz/3' element={<Quiz answerNumber={answer3} onClickAnswer={onClickAnswer}  previousPath='/quiz/2' currentPath='/quiz/3' nextPath='/feedback' />} />
+                <Route path='/feedback' element={<Feedback previousPath='/quiz/3' currentPath='/feedback' nextPath='/result' />} />
+                <Route path='/result' element={<Result previousPath='/quiz/3' currentPath='/feedback' nextPath='/result'/>}/>
             </Routes>
         </div>
     );

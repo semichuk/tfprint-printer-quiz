@@ -12,7 +12,7 @@ const Main = ({ path }) => {
                 <img src={image} />
             </div>
             <h2>Подберите принтер этикеток за 2 минуты</h2>
-            <Link to={path} className='main__button button'>ВЫБРАТЬ ПРИНТЕР</Link>
+            <Link to={path} className='main__button button' style={{  textDecoration: "none"}} >ВЫБРАТЬ ПРИНТЕР</Link>
         </div>
     )
 }

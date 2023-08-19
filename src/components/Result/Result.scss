@@ -1,0 +1,22 @@
+.result {
+    &__footer {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__item {
+        border-width: 3px;
+        border-style: solid;
+        border-color: #c305fa;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: rgb(248, 248, 248);
+        margin: 10px;
+        padding: 20px;
+    }
+
+    &__items {
+        display: grid;
+        row-gap: 10px;
+    }
+}

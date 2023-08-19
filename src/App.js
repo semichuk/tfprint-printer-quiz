@@ -45,7 +45,7 @@ function App() {
                 <Route path='/quiz/2' element={<Quiz answerNumber={answer2} onClickAnswer={onClickAnswer}  previousPath='/quiz/1' currentPath='/quiz/2' nextPath='/quiz/3' />} />
                 <Route path='/quiz/3' element={<Quiz answerNumber={answer3} onClickAnswer={onClickAnswer}  previousPath='/quiz/2' currentPath='/quiz/3' nextPath='/feedback' />} />
                 <Route path='/feedback' element={<Feedback previousPath='/quiz/3' currentPath='/feedback' nextPath='/result' />} />
-                <Route path='/result' element={<Result previousPath='/quiz/3' currentPath='/feedback' nextPath='/result'/>}/>
+                <Route path='/result' element={<Result previousPath='/feedback' currentPath='/result' answer1={answer1} answer2={answer2} answer3={answer3}/>}/>
             </Routes>
         </div>
     );

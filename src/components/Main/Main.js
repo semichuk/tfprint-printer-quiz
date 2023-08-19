@@ -11,7 +11,11 @@ const Main = ({ path }) => {
             <div className='main__header'>
                 <img src={image} />
             </div>
+            <br/>
+            <br/>
             <h2>Подберите принтер этикеток за 2 минуты</h2>
+            <br/>
+            <br/>
             <Link to={path} className='main__button button' style={{  textDecoration: "none"}} >ВЫБРАТЬ ПРИНТЕР</Link>
         </div>
     )

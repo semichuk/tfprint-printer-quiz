@@ -52,6 +52,8 @@
         display: grid;
         justify-items: center;
         padding: 40px;
+        grid-template-columns:  1fr 1fr;
+        column-gap: 40px;
     }
 
     &__checkbox-name {

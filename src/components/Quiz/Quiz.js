@@ -88,20 +88,13 @@ function Quiz({ answerNumber, onClickAnswer, previousPath, nextPath, currentPath
                     </Accordion.Item>
 
                 </Accordion>
-                {/* <div className='quiz__help'>
-                    <div className='quiz__help-content'>
-                        <div>Подсказка:</div>
-                        <em >{test.hint}</em>
-                    </div>
-
-                </div> */}
                 <Form className='quiz__form'>
                     {arrayAnswers}
                 </Form>
                 <Loader />
                 <div className='quiz__footer'>
+                    <Link to={previousPath} className='main__button button' style={{  textDecoration: "none", backgroundColor: "gray"}} >Назад</Link>
                     <Link to={nextPath} className='main__button button' style={{  textDecoration: "none"}} >Далее</Link>
-
                 </div>
             </div >
         </div>

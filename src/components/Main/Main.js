@@ -1,5 +1,4 @@
 import './Main.scss';
-import image from './header_main.webp';
 
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -9,7 +8,7 @@ const Main = ({ path }) => {
         <div className='main '>
             <Loader/>
             <div className='main__header'>
-                <img src={image} />
+                <img src="/new-kviz-2023/build/images/header_main.webp" />
             </div>
             <br/>
             <br/>

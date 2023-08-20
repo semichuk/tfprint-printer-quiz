@@ -1,11 +1,30 @@
 import './Feedback.scss';
 
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
-function Feedback({ previousPath, nextPath, currentPath }) {
+function Feedback({ previousPath, nextPath, currentPath , answer1, answer2, answer3}) {
+    const [result, setResult] = useState(0);
+    useEffect(() => {
+        if (answer1 === 0 && answer2 === 0 && answer3 === 0) {
+            setResult(0);
+        } else if (answer1 === 0 && answer2 === 1 && answer3 === 0) {
+            setResult(1);
+        } else if ((answer1 === 1 || answer1 === 2) && answer2 === 0 && answer3 === 0) {
+            setResult(2);
+        } else if ((answer1 === 1 || answer1 === 2) && answer2 === 1 && answer3 === 0) {
+            setResult(3);
+        } else if (answer1 === 0 && (answer2 === 1 || answer2 === 0) && answer3 === 1) {
+            setResult(4);
+        } else if ((answer1 === 1 || answer1 === 2) && (answer2 === 1 || answer2 === 0) && answer3 === 1) {
+            setResult(5);
+        } else if ((answer1 === 1 || answer1 === 2 || answer1 === 0) && (answer2 === 1 || answer2 === 0) && answer3 === 2) {
+            setResult(6);
+        }
+    }, [answer1, answer2, answer3]);
     return (
         <div className='feedback'>
             <h2>Оставте свои данные и мы свяжемся с вами</h2>
@@ -34,7 +53,7 @@ function Feedback({ previousPath, nextPath, currentPath }) {
                 </div>
                 <div className='feedback__download-form'>
                     <h5>Скайчать список подходящих принтеров</h5>
-                    <a href='' download className='main__button button' style={{ textDecoration: "none" }}>Скачать список принтеров</a>
+                    <a href={"https://www.tfprint.ru/new-kviz-2023/build/printers/printers" + result + ".pdf"} download className='main__button button' style={{ textDecoration: "none" }}>Скачать список принтеров</a>
                 </div>
             </div>
             <div className='feedback__footer'>

@@ -51,9 +51,9 @@
     &__footer {
         display: grid;
         justify-items: center;
-        padding: 40px;
+        padding: 5px;
         grid-template-columns:  1fr 1fr;
-        column-gap: 40px;
+        column-gap: 10px;
     }
 
     &__checkbox-name {

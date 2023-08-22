@@ -476,6 +476,7 @@ function Result({ previousPath, currentPath, answer1, answer2, answer3 }) {
             <Loader />
             <div className='result__footer'>
                 <Link to={previousPath} className='main__button button' style={{ textDecoration: "none", backgroundColor: "gray" }} >Назад</Link>
+                <a href={"https://www.tfprint.ru/new-kviz-2023/build/printers/printers" + result + ".pdf"} download className='main__button button' style={{ textDecoration: "none" }}>Скачать список принтеров</a>
             </div>
         </div>
 

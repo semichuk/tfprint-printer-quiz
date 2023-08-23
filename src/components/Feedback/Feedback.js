@@ -14,12 +14,12 @@ function Feedback({ previousPath, nextPath, currentPath , answer1, answer2, answ
                 <div className='feedback__feedback-form'>
                     <h5>Оставте свои данные и посмотрите список подходящих принтеров</h5>
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Group className="mb-3" >
                             <Form.Label>Имя</Form.Label>
                             <Form.Control type="text"  placeholder="Введите имя" />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Group className="mb-3" >
                             <Form.Label>Почта</Form.Label>
                             <Form.Control  type="email" placeholder="Введите почту" />
                         </Form.Group>

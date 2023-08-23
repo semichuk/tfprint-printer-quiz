@@ -1,7 +1,7 @@
 .feedback {
     display: grid;
     justify-items: center;
-
+    padding: 20px;
     &__forms {
         display: grid;
         row-gap: 20px;
@@ -9,13 +9,25 @@
     }
 
     &__footer {
-        width: 100%;
         display: grid;
         justify-items: center;
-        padding: 20px;
-        grid-template-columns:  1fr 1fr;
-        column-gap: 40px;
+        padding: 5px;
+        grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
+        column-gap: 30px;
+        row-gap: 30px;
+        width: 100%;
     }
+
+    @media(min-width: 680px) {
+        .feedback__footer {
+            display: grid;
+            justify-items: center;
+            padding: 5px;
+            grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
+            column-gap: 30%;
+            row-gap: 30px;
+        }
+      }
     
     &__feedback-form {
         display: grid;

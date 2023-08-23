@@ -52,9 +52,21 @@
         display: grid;
         justify-items: center;
         padding: 5px;
-        grid-template-columns:  1fr 1fr;
-        column-gap: 10px;
+        grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
+        column-gap: 30px;
+        row-gap: 30px;
     }
+
+    @media(min-width: 680px) {
+        .quiz__footer {
+            display: grid;
+            justify-items: center;
+            padding: 5px;
+            grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
+            column-gap: 30%;
+            row-gap: 30px;
+        }
+      }
 
     &__checkbox-name {
 

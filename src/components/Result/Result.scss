@@ -1,11 +1,12 @@
 .result {
-    text-align: center;
+    display: grid;
+    justify-items: center;
     &__footer {
         padding: 10px;
         display: grid;
         justify-items: center;
         grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
+        column-gap: 30px;
     }
 
     &__item {

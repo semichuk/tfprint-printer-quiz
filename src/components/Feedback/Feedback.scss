@@ -19,12 +19,13 @@
     }
 
     @media(min-width: 680px) {
-        .feedback__footer {
+        &__footer {
             display: grid;
             justify-items: center;
-            padding: 5px;
-            grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
-            column-gap: 30%;
+            padding-left: 10%;
+            padding-right: 10%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20%;
             row-gap: 30px;
         }
       }

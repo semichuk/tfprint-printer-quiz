@@ -2,12 +2,26 @@
     display: grid;
     justify-items: center;
     &__footer {
-        padding: 10px;
         display: grid;
         justify-items: center;
-        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        grid-template-columns: repeat( auto-fit , minmax(200px, 1fr));
         column-gap: 30px;
+        row-gap: 30px;
+        width: 100%;
     }
+
+    @media(min-width: 400px) {
+        &__footer {
+            display: grid;
+            justify-items: center;
+            padding-left: 10%;
+            padding-right: 10%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20%;
+            row-gap: 30px;
+        }
+      }
 
     &__item {
         border-width: 3px;
